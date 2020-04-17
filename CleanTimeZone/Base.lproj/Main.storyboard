@@ -1,24 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="CleanTimeZone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fff-i4-md7">
+                                <rect key="frame" x="59" y="201" width="296" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="296" id="7l3-0L-SUI"/>
+                                    <constraint firstAttribute="height" constant="65" id="d08-wV-i3g"/>
+                                </constraints>
+                                <string key="text">CleanTimeZone opened
+X times</string>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B5V-t1-usp">
+                                <rect key="frame" x="102.5" y="342" width="209" height="49"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="LXk-zc-Sqy"/>
+                                    <constraint firstAttribute="width" constant="209" id="mWB-e6-BB4"/>
+                                </constraints>
+                                <state key="normal" title="Change background color">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeBackgroundColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="abl-Df-fPn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92G-X7-K11">
+                                <rect key="frame" x="102.5" y="486" width="209" height="54"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="AJc-pG-H57"/>
+                                    <constraint firstAttribute="width" constant="209" id="ZBd-Nj-vpB"/>
+                                </constraints>
+                                <state key="normal" title="Check Time Zones">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="checkTimeZones:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m8i-CB-ZPc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="B5V-t1-usp" firstAttribute="centerX" secondItem="fff-i4-md7" secondAttribute="centerX" id="1PX-R9-UU6"/>
+                            <constraint firstItem="92G-X7-K11" firstAttribute="top" secondItem="B5V-t1-usp" secondAttribute="bottom" constant="95" id="FpQ-V9-GZi"/>
+                            <constraint firstItem="fff-i4-md7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Ha4-iC-znV"/>
+                            <constraint firstItem="92G-X7-K11" firstAttribute="centerX" secondItem="B5V-t1-usp" secondAttribute="centerX" id="Yc3-1F-N8U"/>
+                            <constraint firstItem="fff-i4-md7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="157" id="f6c-hK-Yem"/>
+                            <constraint firstItem="B5V-t1-usp" firstAttribute="top" secondItem="fff-i4-md7" secondAttribute="bottom" constant="76" id="yJj-NV-X40"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="changeBackgroundColorButton" destination="B5V-t1-usp" id="YeM-z3-pOL"/>
+                        <outlet property="checkTimeZonesButton" destination="92G-X7-K11" id="wck-hB-Idy"/>
+                        <outlet property="mainLabel" destination="fff-i4-md7" id="zOV-hc-9gL"/>
+                        <segue destination="g8f-Nu-nce" kind="show" identifier="TimeZonesViewController" id="Bnz-tb-E7d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="115.84821428571428"/>
+        </scene>
+        <!--Time Zones View Controller-->
+        <scene sceneID="VAC-rN-e8Y">
+            <objects>
+                <viewController id="g8f-Nu-nce" customClass="TimeZonesViewController" customModule="CleanTimeZone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O12-dq-Mtv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bsP-LH-TY0">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="136" id="Wh0-aE-IKE">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="136"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wh0-aE-IKE" id="iS6-Ks-UbC">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="136"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bsP-LH-TY0" firstAttribute="leading" secondItem="qYz-M0-kkJ" secondAttribute="leading" id="Dv7-2W-Ofc"/>
+                            <constraint firstItem="bsP-LH-TY0" firstAttribute="top" secondItem="qYz-M0-kkJ" secondAttribute="top" id="NQK-Ij-lKo"/>
+                            <constraint firstItem="qYz-M0-kkJ" firstAttribute="trailing" secondItem="bsP-LH-TY0" secondAttribute="trailing" id="ani-rm-Cnb"/>
+                            <constraint firstItem="bsP-LH-TY0" firstAttribute="bottom" secondItem="qYz-M0-kkJ" secondAttribute="bottom" constant="34" id="zRh-xP-pPx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qYz-M0-kkJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="MKc-xl-cDs"/>
+                    <connections>
+                        <outlet property="timeZonesTableView" destination="bsP-LH-TY0" id="oH7-QV-dqn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ry3-J4-RU9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1095.6521739130435" y="115.84821428571428"/>
         </scene>
     </scenes>
 </document>
