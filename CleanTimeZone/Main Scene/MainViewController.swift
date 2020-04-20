@@ -39,15 +39,8 @@ final class MainViewController: UIViewController {
     }
     
     func updateUI() {
+        mainLabel.text = viewModel?.mainText
         updateBackgroundColor()
-        updateMainLabel()
-    }
-    
-    func updateMainLabel() {
-        let messageBeginning = NSLocalizedString("CleanTimeZone opened", comment: "")
-        let timesOpen = viewModel?.timesOpen?.description ?? "X"
-        let messageEnd = NSLocalizedString("times", comment: "")
-        mainLabel.text = messageBeginning + "\r" + timesOpen + " " + messageEnd
     }
     
     func updateBackgroundColor() {

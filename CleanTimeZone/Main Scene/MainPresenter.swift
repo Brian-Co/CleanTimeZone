@@ -18,12 +18,21 @@ final class MainPresenter {
     init(viewController: MainViewControllerInput?) {
         self.viewController = viewController
     }
+    
+    func updateMainLabel(_ timesOpen: Int?) -> String {
+        let messageBeginning = NSLocalizedString("CleanTimeZone opened", comment: "")
+        let timesOpen = timesOpen?.description ?? "X"
+        let messageEnd = NSLocalizedString("times", comment: "")
+        let mainText = messageBeginning + "\r" + timesOpen + " " + messageEnd
+        return mainText
+    }
 }
 
 extension MainPresenter: MainPresenterInput {
     
     func modelUpdated(_ timesOpen: Int?, _ color: MainViewModel.MainBackgroundColor?) {
-        let viewModel = MainViewModel.Content(timesOpen: timesOpen, backgroundColor: color)
+        let mainText = updateMainLabel(timesOpen)
+        let viewModel = MainViewModel.Content(mainText: mainText, backgroundColor: color)
         viewController?.viewModelUpdated(viewModel)
     }
 }

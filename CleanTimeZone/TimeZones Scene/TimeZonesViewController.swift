@@ -43,6 +43,7 @@ extension TimeZonesViewController: TimeZonesViewControllerInput {
 
 
 extension TimeZonesViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.timeZones.count ?? 0
     }
@@ -51,12 +52,8 @@ extension TimeZonesViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
         let timeZone = viewModel?.timeZones[indexPath.row]
-        let city = timeZone?.city ?? ""
-        let country = timeZone?.country ?? ""
-        let continent = timeZone?.continent ?? ""
-        
+        cell.textLabel?.text = timeZone?.text
         cell.imageView?.image = UIImage(systemName: "clock")
-        cell.textLabel?.text = city + ", " + country
         
         return cell
     }
@@ -64,6 +61,5 @@ extension TimeZonesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
     
 }

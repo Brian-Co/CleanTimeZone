@@ -10,7 +10,7 @@ import Foundation
 
 enum MainViewModel {
     struct Content {
-        let timesOpen: Int?
+        let mainText: String
         let backgroundColor: MainBackgroundColor?
     }
     

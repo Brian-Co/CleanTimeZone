@@ -22,7 +22,6 @@
 		5F2E9D3F244A096D007C7944 /* TimeZonesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2E9D3B244A096D007C7944 /* TimeZonesViewController.swift */; };
 		5F2E9D40244A096D007C7944 /* TimeZonesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2E9D3C244A096D007C7944 /* TimeZonesInteractor.swift */; };
 		5F2E9D41244A096D007C7944 /* TimeZonesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2E9D3D244A096D007C7944 /* TimeZonesViewModel.swift */; };
-		5F2E9D43244A0AF9007C7944 /* TimeZonesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2E9D42244A0AF9007C7944 /* TimeZonesRequest.swift */; };
 		5F2E9D45244A0BB8007C7944 /* TimeZonesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2E9D44244A0BB8007C7944 /* TimeZonesResponse.swift */; };
 		5F5DB15A244D89BD00973658 /* WSRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5DB159244D89BD00973658 /* WSRequest.swift */; };
 /* End PBXBuildFile section */
@@ -66,7 +65,6 @@
 		5F2E9D3B244A096D007C7944 /* TimeZonesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZonesViewController.swift; sourceTree = "<group>"; };
 		5F2E9D3C244A096D007C7944 /* TimeZonesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZonesInteractor.swift; sourceTree = "<group>"; };
 		5F2E9D3D244A096D007C7944 /* TimeZonesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZonesViewModel.swift; sourceTree = "<group>"; };
-		5F2E9D42244A0AF9007C7944 /* TimeZonesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZonesRequest.swift; sourceTree = "<group>"; };
 		5F2E9D44244A0BB8007C7944 /* TimeZonesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZonesResponse.swift; sourceTree = "<group>"; };
 		5F5DB159244D89BD00973658 /* WSRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,7 +163,6 @@
 			isa = PBXGroup;
 			children = (
 				5F2E9D3B244A096D007C7944 /* TimeZonesViewController.swift */,
-				5F2E9D42244A0AF9007C7944 /* TimeZonesRequest.swift */,
 				5F2E9D3C244A096D007C7944 /* TimeZonesInteractor.swift */,
 				5F2E9D44244A0BB8007C7944 /* TimeZonesResponse.swift */,
 				5F2E9D3A244A096D007C7944 /* TimeZonesPresenter.swift */,
@@ -313,7 +310,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F2E9D43244A0AF9007C7944 /* TimeZonesRequest.swift in Sources */,
 				5F2E9D372449E200007C7944 /* MainViewModel.swift in Sources */,
 				5F2E9D41244A096D007C7944 /* TimeZonesViewModel.swift in Sources */,
 				5F2E9D3F244A096D007C7944 /* TimeZonesViewController.swift in Sources */,

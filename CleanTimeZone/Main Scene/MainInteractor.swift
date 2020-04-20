@@ -22,10 +22,6 @@ final class MainInteractor {
     init(presenter: MainPresenterInput?) {
         self.presenter = presenter
     }
-    
-    func updatePresenter() {
-        presenter?.modelUpdated(timesOpen, currentColor)
-    }
 }
 
 extension MainInteractor: MainInteractorInput {
@@ -36,7 +32,7 @@ extension MainInteractor: MainInteractorInput {
         timesOpen = timesOpenDefault
         defaults.set(timesOpen, forKey: "timesOpen")
         
-        updatePresenter()
+        presenter?.modelUpdated(timesOpen, currentColor)
     }
     
     func changeBackgroundColor() {
@@ -45,7 +41,7 @@ extension MainInteractor: MainInteractorInput {
         let newColor = colors.randomElement()
         currentColor = newColor
         
-        updatePresenter()
+        presenter?.modelUpdated(timesOpen, currentColor)
     }
 }
 
