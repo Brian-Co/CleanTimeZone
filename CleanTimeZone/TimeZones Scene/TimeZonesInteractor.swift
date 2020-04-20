@@ -20,47 +20,15 @@ final class TimeZonesInteractor {
     }
     
     func requestTimeZones() {
-        let url = "http://api.timezonedb.com/v2.1/list-time-zone?key=HEG8FEDU4DE3&format=json"
-        getData(from: url) { [weak self] data in
+        let url = WSRequest.TimeZonesRequest.allTimeZones.url
+        
+        WSRequest.Methods.getData(from: url) { [weak self] data in
             if let data = data,
-                let response = self?.decode(data) {
+                let response: TimeZonesResponse.Response = WSRequest.Methods.decode(data) {
                 DispatchQueue.main.async {
                     self?.presenter?.modelUpdated(with: response)
                 }
             }
-        }
-    }
-    
-    func getData(from urlString: String, completion: @escaping (Data?) -> ()) {
-        
-        guard let url = URL(string: urlString) else {
-            return completion(nil)
-        }
-        
-        let urlRequest = URLRequest(url: url)
-        let config = URLSessionConfiguration.default
-        let session = URLSession(configuration: config)
-        let task = session.dataTask(with: urlRequest) { (data, response, error) in
-            if let error = error {
-                print(error)
-                return completion(nil)
-            }
-            
-            guard let responseData = data else {
-                return completion(nil)
-            }
-
-            return completion(responseData)
-        }
-        task.resume()
-    }
-    
-    func decode(_ data: Data) -> TimeZonesResponse.Response? {
-        let decoder = JSONDecoder()
-        if let response = try? decoder.decode(TimeZonesResponse.Response.self, from: data) {
-            return response
-        } else {
-            return nil
         }
     }
 }

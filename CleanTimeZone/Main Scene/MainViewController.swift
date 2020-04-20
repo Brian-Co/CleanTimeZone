@@ -21,7 +21,6 @@ final class MainViewController: UIViewController {
     @IBOutlet weak var changeBackgroundColorButton: UIButton!
     @IBOutlet weak var checkTimeZonesButton: UIButton!
     
-    
     func initScene() {
         interactor = MainInteractor(presenter: MainPresenter(viewController: self))
     }
@@ -52,7 +51,7 @@ final class MainViewController: UIViewController {
     }
     
     func updateBackgroundColor() {
-        let color = viewModel?.backgroundColor?.color()
+        let color = viewModel?.backgroundColor?.color
         view.backgroundColor = color ?? .white
         mainLabel.textColor = color == UIColor.black ? UIColor.white : UIColor.label
     }
@@ -65,7 +64,6 @@ final class MainViewController: UIViewController {
         performSegue(withIdentifier: "TimeZonesViewController", sender: self)
     }
     
-
 }
 
 extension MainViewController: MainViewControllerInput {
@@ -74,13 +72,9 @@ extension MainViewController: MainViewControllerInput {
         updateUI()
     }
 }
-
-enum MainBackgroundColor: CaseIterable {
-    case white
-    case black
-    case green
     
-    func color() -> UIColor {
+extension MainViewModel.MainBackgroundColor {
+    var color: UIColor {
         switch self {
         case .white:
             return .white

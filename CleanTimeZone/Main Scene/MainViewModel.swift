@@ -13,4 +13,10 @@ enum MainViewModel {
         let timesOpen: Int?
         let backgroundColor: MainBackgroundColor?
     }
+    
+    enum MainBackgroundColor: CaseIterable {
+        case white
+        case black
+        case green
+    }
 }

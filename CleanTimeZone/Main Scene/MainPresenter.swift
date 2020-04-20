@@ -9,7 +9,7 @@
 import Foundation
 
 protocol MainPresenterInput: class {
-    func modelUpdated(_ timesOpen: Int?, _ color: MainBackgroundColor?)
+    func modelUpdated(_ timesOpen: Int?, _ color: MainViewModel.MainBackgroundColor?)
 }
 
 final class MainPresenter {
@@ -22,7 +22,7 @@ final class MainPresenter {
 
 extension MainPresenter: MainPresenterInput {
     
-    func modelUpdated(_ timesOpen: Int?, _ color: MainBackgroundColor?) {
+    func modelUpdated(_ timesOpen: Int?, _ color: MainViewModel.MainBackgroundColor?) {
         let viewModel = MainViewModel.Content(timesOpen: timesOpen, backgroundColor: color)
         viewController?.viewModelUpdated(viewModel)
     }

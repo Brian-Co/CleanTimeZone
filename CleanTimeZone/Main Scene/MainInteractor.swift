@@ -17,7 +17,7 @@ final class MainInteractor {
     var presenter: MainPresenterInput?
     
     var timesOpen: Int?
-    var currentColor: MainBackgroundColor?
+    var currentColor: MainViewModel.MainBackgroundColor?
     
     init(presenter: MainPresenterInput?) {
         self.presenter = presenter
@@ -40,7 +40,7 @@ extension MainInteractor: MainInteractorInput {
     }
     
     func changeBackgroundColor() {
-        let allColors = MainBackgroundColor.allCases
+        let allColors = MainViewModel.MainBackgroundColor.allCases
         let colors = allColors.filter { $0 != currentColor }
         let newColor = colors.randomElement()
         currentColor = newColor
