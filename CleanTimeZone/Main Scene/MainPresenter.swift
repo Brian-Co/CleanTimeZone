@@ -9,12 +9,16 @@
 import Foundation
 
 protocol MainPresenterInput: class {
-    func modelUpdated(_ timesOpen: Int?, _ color: MainViewModel.MainBackgroundColor?)
+    func modelUpdated(_ timesOpen: Int?)
+    func colorUpdated(_ color: MainViewModel.MainBackgroundColor?)
 }
 
 final class MainPresenter {
     weak var viewController: MainViewControllerInput?
 
+    var mainText: String?
+    var color: MainViewModel.MainBackgroundColor?
+    
     init(viewController: MainViewControllerInput?) {
         self.viewController = viewController
     }
@@ -30,9 +34,17 @@ final class MainPresenter {
 
 extension MainPresenter: MainPresenterInput {
     
-    func modelUpdated(_ timesOpen: Int?, _ color: MainViewModel.MainBackgroundColor?) {
+    func modelUpdated(_ timesOpen: Int?) {
         let mainText = updateMainLabel(timesOpen)
+        self.mainText = mainText
         let viewModel = MainViewModel.Content(mainText: mainText, backgroundColor: color)
-        viewController?.viewModelUpdated(viewModel)
+        viewController?.viewModelUpdated(viewModel, .mainText)
     }
+    
+    func colorUpdated(_ color: MainViewModel.MainBackgroundColor?) {
+        self.color = color
+        let viewModel = MainViewModel.Content(mainText: mainText, backgroundColor: color)
+        viewController?.viewModelUpdated(viewModel, .color)
+    }
+    
 }

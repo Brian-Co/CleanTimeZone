@@ -113,11 +113,44 @@ X times</string>
                     <navigationItem key="navigationItem" id="MKc-xl-cDs"/>
                     <connections>
                         <outlet property="timeZonesTableView" destination="bsP-LH-TY0" id="oH7-QV-dqn"/>
+                        <segue destination="rZj-MG-lrE" kind="show" identifier="TimeZoneDetailViewController" id="p3s-tL-bwz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ry3-J4-RU9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1095.6521739130435" y="115.84821428571428"/>
+        </scene>
+        <!--Time Zone Detail View Controller-->
+        <scene sceneID="yly-ve-uhW">
+            <objects>
+                <viewController id="rZj-MG-lrE" customClass="TimeZoneDetailViewController" customModule="CleanTimeZone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Oa8-cw-1kF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TimeZoneDetail" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DgM-hc-5lO">
+                                <rect key="frame" x="56" y="243" width="308" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="YLf-mm-8uc" firstAttribute="trailing" secondItem="DgM-hc-5lO" secondAttribute="trailing" constant="50" id="5Ic-7W-iYh"/>
+                            <constraint firstItem="DgM-hc-5lO" firstAttribute="top" secondItem="YLf-mm-8uc" secondAttribute="top" constant="243" id="SdP-HL-YFw"/>
+                            <constraint firstItem="DgM-hc-5lO" firstAttribute="leading" secondItem="YLf-mm-8uc" secondAttribute="leading" constant="56" id="joR-yQ-4NN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YLf-mm-8uc"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="JrD-WL-hsz"/>
+                    <connections>
+                        <outlet property="timeZoneDetailLabel" destination="DgM-hc-5lO" id="81i-KB-i8u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pZN-7m-e7V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2037.68115942029" y="115.84821428571428"/>
         </scene>
     </scenes>
 </document>

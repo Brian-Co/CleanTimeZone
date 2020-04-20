@@ -16,9 +16,11 @@ final class TimeZonesViewController: UIViewController {
 
     var interactor: TimeZonesInteractorInput?
     var viewModel: TimeZonesViewModel.Content?
-
-    @IBOutlet weak var timeZonesTableView: UITableView!
     
+    @IBOutlet weak var timeZonesTableView: UITableView!
+    var activityIndicator: UIActivityIndicatorView?
+    
+    var apiLink: String?
     
     func initScene() {
         interactor = TimeZonesInteractor(presenter: TimeZonesPresenter(viewController: self))
@@ -29,7 +31,23 @@ final class TimeZonesViewController: UIViewController {
         timeZonesTableView.delegate = self
         timeZonesTableView.dataSource = self
         initScene()
+        addActivityIndicator()
         interactor?.loadContent()
+    }
+    
+    func addActivityIndicator() {
+        let frame = CGRect(x: view.frame.midX, y: view.frame.midY, width: 20, height: 20)
+        let indicator = UIActivityIndicatorView(frame: frame)
+        indicator.hidesWhenStopped = true
+        view.addSubview(indicator)
+        indicator.startAnimating()
+        activityIndicator = indicator
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let timeZoneDetailVC = segue.destination as? TimeZoneDetailViewController {
+            timeZoneDetailVC.apiLink = apiLink
+        }
     }
 
 }
@@ -37,6 +55,7 @@ final class TimeZonesViewController: UIViewController {
 extension TimeZonesViewController: TimeZonesViewControllerInput {
     func viewModelUpdated(_ viewModel: TimeZonesViewModel.Content) {
         self.viewModel = viewModel
+        activityIndicator?.stopAnimating()
         timeZonesTableView.reloadData()
     }
 }
@@ -60,6 +79,8 @@ extension TimeZonesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        apiLink = viewModel?.timeZones[indexPath.row].apiLink
+        self.performSegue(withIdentifier: "TimeZoneDetailViewController", sender: self)
     }
     
 }

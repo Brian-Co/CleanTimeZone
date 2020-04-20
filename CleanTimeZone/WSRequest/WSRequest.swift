@@ -12,7 +12,7 @@ enum WSRequest {
     
     enum TimeZonesRequest {
         case allTimeZones
-        case paris
+        case timeZoneDetail
     }
     
     struct Methods {
@@ -59,8 +59,8 @@ extension WSRequest.TimeZonesRequest {
         switch self {
         case .allTimeZones:
             return "http://api.timezonedb.com/v2.1/list-time-zone?key=HEG8FEDU4DE3&format=json"
-        case .paris:
-            return "http://api.timezonedb.com/v2.1/get-time-zone?key=HEG8FEDU4DE3&format=json&by=zone&zone=Europe/Paris"
+        case .timeZoneDetail:
+            return "http://api.timezonedb.com/v2.1/get-time-zone?key=HEG8FEDU4DE3&format=json&by=zone&zone="
         }
     }
     

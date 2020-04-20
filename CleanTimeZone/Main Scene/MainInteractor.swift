@@ -16,7 +16,6 @@ protocol MainInteractorInput: class {
 final class MainInteractor {
     var presenter: MainPresenterInput?
     
-    var timesOpen: Int?
     var currentColor: MainViewModel.MainBackgroundColor?
     
     init(presenter: MainPresenterInput?) {
@@ -27,12 +26,11 @@ final class MainInteractor {
 extension MainInteractor: MainInteractorInput {
     func loadContent() {
         let defaults = UserDefaults.standard
-        var timesOpenDefault = defaults.integer(forKey: "timesOpen")
-        timesOpenDefault += 1
-        timesOpen = timesOpenDefault
+        var timesOpen = defaults.integer(forKey: "timesOpen")
+        timesOpen += 1
         defaults.set(timesOpen, forKey: "timesOpen")
         
-        presenter?.modelUpdated(timesOpen, currentColor)
+        presenter?.modelUpdated(timesOpen)
     }
     
     func changeBackgroundColor() {
@@ -41,7 +39,7 @@ extension MainInteractor: MainInteractorInput {
         let newColor = colors.randomElement()
         currentColor = newColor
         
-        presenter?.modelUpdated(timesOpen, currentColor)
+        presenter?.colorUpdated(newColor)
     }
 }
 

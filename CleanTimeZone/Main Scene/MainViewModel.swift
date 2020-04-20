@@ -10,8 +10,13 @@ import Foundation
 
 enum MainViewModel {
     struct Content {
-        let mainText: String
+        let mainText: String?
         let backgroundColor: MainBackgroundColor?
+    }
+    
+    enum ChangedContent {
+        case mainText
+        case color
     }
     
     enum MainBackgroundColor: CaseIterable {

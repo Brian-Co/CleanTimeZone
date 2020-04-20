@@ -9,7 +9,7 @@
 import UIKit
 
 protocol MainViewControllerInput: class {
-    func viewModelUpdated(_ viewModel: MainViewModel.Content)
+    func viewModelUpdated(_ viewModel: MainViewModel.Content, _ changedContent: MainViewModel.ChangedContent)
 }
 
 final class MainViewController: UIViewController {
@@ -38,11 +38,6 @@ final class MainViewController: UIViewController {
         checkTimeZonesButton.layer.cornerRadius = 15
     }
     
-    func updateUI() {
-        mainLabel.text = viewModel?.mainText
-        updateBackgroundColor()
-    }
-    
     func updateBackgroundColor() {
         let color = viewModel?.backgroundColor?.color
         view.backgroundColor = color ?? .white
@@ -60,10 +55,17 @@ final class MainViewController: UIViewController {
 }
 
 extension MainViewController: MainViewControllerInput {
-    func viewModelUpdated(_ viewModel: MainViewModel.Content) {
+    
+    func viewModelUpdated(_ viewModel: MainViewModel.Content, _ changedContent: MainViewModel.ChangedContent) {
         self.viewModel = viewModel
-        updateUI()
+        switch changedContent {
+        case .mainText:
+            mainLabel.text = viewModel.mainText
+        case .color:
+            updateBackgroundColor()
+        }
     }
+    
 }
     
 extension MainViewModel.MainBackgroundColor {

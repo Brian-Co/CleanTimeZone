@@ -17,6 +17,7 @@ enum TimeZonesViewModel {
         struct Zone {
             let text: String
             let detailText: String
+            let apiLink: String
             let city: String
             let country: String
             let countryCode: String
