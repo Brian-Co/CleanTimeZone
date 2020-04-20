@@ -18,6 +18,7 @@ final class TimeZoneDetailViewController: UIViewController {
     var viewModel: TimeZoneDetailViewModel.Content?
     
     @IBOutlet weak var timeZoneDetailLabel: UILabel!
+    var activityIndicator: UIActivityIndicatorView?
     
     var apiLink: String?
 
@@ -28,6 +29,8 @@ final class TimeZoneDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initScene()
+        timeZoneDetailLabel.text = ""
+        activityIndicator = view.activityIndicator()
         interactor?.loadContent(apiLink)
     }
 
@@ -36,6 +39,7 @@ final class TimeZoneDetailViewController: UIViewController {
 extension TimeZoneDetailViewController: TimeZoneDetailViewControllerInput {
     func viewModelUpdated(_ viewModel: TimeZoneDetailViewModel.Content) {
         self.viewModel = viewModel
+        activityIndicator?.stopAnimating()
         timeZoneDetailLabel.text = viewModel.detailText
     }
 }

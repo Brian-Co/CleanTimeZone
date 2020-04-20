@@ -31,17 +31,8 @@ final class TimeZonesViewController: UIViewController {
         timeZonesTableView.delegate = self
         timeZonesTableView.dataSource = self
         initScene()
-        addActivityIndicator()
+        activityIndicator = view.activityIndicator()
         interactor?.loadContent()
-    }
-    
-    func addActivityIndicator() {
-        let frame = CGRect(x: view.frame.midX, y: view.frame.midY, width: 20, height: 20)
-        let indicator = UIActivityIndicatorView(frame: frame)
-        indicator.hidesWhenStopped = true
-        view.addSubview(indicator)
-        indicator.startAnimating()
-        activityIndicator = indicator
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

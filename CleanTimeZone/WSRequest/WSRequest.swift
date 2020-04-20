@@ -20,6 +20,7 @@ enum WSRequest {
         static func getData(from urlString: String, completion: @escaping (Data?) -> ()) {
             
             guard let url = URL(string: urlString) else {
+                print("Wrong url \(urlString)")
                 return completion(nil)
             }
             
@@ -33,6 +34,7 @@ enum WSRequest {
                 }
                 
                 guard let responseData = data else {
+                    print("Data error")
                     return completion(nil)
                 }
                 
@@ -44,6 +46,7 @@ enum WSRequest {
         static func decode<T: Codable>(_ data: Data) -> T? {
             let decoder = JSONDecoder()
             guard let response = try? decoder.decode(T.self, from: data) else {
+                print("Cannot decode data")
                 return nil
             }
             return response

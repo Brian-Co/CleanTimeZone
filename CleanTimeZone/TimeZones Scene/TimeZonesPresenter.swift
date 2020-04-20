@@ -33,9 +33,8 @@ final class TimeZonesPresenter {
             let continent = String(zoneName.first ?? "")
             let text = city + ", " + country
             let detailText = ""
-            let apiLink = continent + "/" + city
             
-            let timeZone = Zone(text: text, detailText: detailText, apiLink: apiLink, city: city, country: country, countryCode: responseTimeZone.countryCode, continent: continent, gmtOffset: responseTimeZone.gmtOffset, timestamp: responseTimeZone.timestamp)
+            let timeZone = Zone(text: text, detailText: detailText, apiLink: responseTimeZone.zoneName, city: city, country: country, countryCode: responseTimeZone.countryCode, continent: continent, gmtOffset: responseTimeZone.gmtOffset, timestamp: responseTimeZone.timestamp)
             
             return timeZone
         }

@@ -43,7 +43,7 @@ final class TimeZoneDetailPresenter {
         guard let date = dateFormatter.date(from: dateString) else { return "Invalid Date" }
         
         dateFormatter.dateStyle = .full
-        dateFormatter.timeStyle = .long
+        dateFormatter.timeStyle = .medium
         dateFormatter.locale = Locale.init(identifier: "fr_FR")
         
         return dateFormatter.string(from: date)

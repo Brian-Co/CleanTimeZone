@@ -29,6 +29,7 @@
 		5F5DB162244D9F2100973658 /* TimeZoneDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5DB15E244D9F2100973658 /* TimeZoneDetailInteractor.swift */; };
 		5F5DB163244D9F2100973658 /* TimeZoneDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5DB15F244D9F2100973658 /* TimeZoneDetailViewModel.swift */; };
 		5F5DB165244D9F4D00973658 /* TimeZoneDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5DB164244D9F4D00973658 /* TimeZoneDetailResponse.swift */; };
+		5F5DB168244DCEBE00973658 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5DB167244DCEBE00973658 /* UIView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		5F5DB15E244D9F2100973658 /* TimeZoneDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZoneDetailInteractor.swift; sourceTree = "<group>"; };
 		5F5DB15F244D9F2100973658 /* TimeZoneDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZoneDetailViewModel.swift; sourceTree = "<group>"; };
 		5F5DB164244D9F4D00973658 /* TimeZoneDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZoneDetailResponse.swift; sourceTree = "<group>"; };
+		5F5DB167244DCEBE00973658 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				5F2E9D39244A094B007C7944 /* TimeZones Scene */,
 				5F5DB15B244D9EFF00973658 /* TimeZoneDetail Scene */,
 				5F5DB158244D897500973658 /* WSRequest */,
+				5F5DB166244DCE9F00973658 /* Extensions */,
 				5F2E9D002449E1BF007C7944 /* AppDelegate.swift */,
 				5F2E9D022449E1BF007C7944 /* SceneDelegate.swift */,
 				5F2E9D062449E1BF007C7944 /* Main.storyboard */,
@@ -200,6 +203,14 @@
 				5F5DB15F244D9F2100973658 /* TimeZoneDetailViewModel.swift */,
 			);
 			path = "TimeZoneDetail Scene";
+			sourceTree = "<group>";
+		};
+		5F5DB166244DCE9F00973658 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5F5DB167244DCEBE00973658 /* UIView+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,6 +356,7 @@
 				5F5DB160244D9F2100973658 /* TimeZoneDetailPresenter.swift in Sources */,
 				5F2E9D45244A0BB8007C7944 /* TimeZonesResponse.swift in Sources */,
 				5F2E9D3E244A096D007C7944 /* TimeZonesPresenter.swift in Sources */,
+				5F5DB168244DCEBE00973658 /* UIView+Extensions.swift in Sources */,
 				5F5DB162244D9F2100973658 /* TimeZoneDetailInteractor.swift in Sources */,
 				5F2E9D342449E200007C7944 /* MainPresenter.swift in Sources */,
 				5F2E9D352449E200007C7944 /* MainViewController.swift in Sources */,
