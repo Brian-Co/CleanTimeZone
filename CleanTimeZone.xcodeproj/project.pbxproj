@@ -30,6 +30,10 @@
 		5F5DB163244D9F2100973658 /* TimeZoneDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5DB15F244D9F2100973658 /* TimeZoneDetailViewModel.swift */; };
 		5F5DB165244D9F4D00973658 /* TimeZoneDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5DB164244D9F4D00973658 /* TimeZoneDetailResponse.swift */; };
 		5F5DB168244DCEBE00973658 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5DB167244DCEBE00973658 /* UIView+Extensions.swift */; };
+		5F5DB177244DDCF600973658 /* MainInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5DB173244DDCF600973658 /* MainInteractorTests.swift */; };
+		5F5DB178244DDCF600973658 /* MainViewControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5DB174244DDCF600973658 /* MainViewControllerSpy.swift */; };
+		5F5DB179244DDCF600973658 /* MainPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5DB175244DDCF600973658 /* MainPresenterSpy.swift */; };
+		5F5DB17A244DDCF600973658 /* MainPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5DB176244DDCF600973658 /* MainPresenterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +83,10 @@
 		5F5DB15F244D9F2100973658 /* TimeZoneDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZoneDetailViewModel.swift; sourceTree = "<group>"; };
 		5F5DB164244D9F4D00973658 /* TimeZoneDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZoneDetailResponse.swift; sourceTree = "<group>"; };
 		5F5DB167244DCEBE00973658 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		5F5DB173244DDCF600973658 /* MainInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorTests.swift; sourceTree = "<group>"; };
+		5F5DB174244DDCF600973658 /* MainViewControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerSpy.swift; sourceTree = "<group>"; };
+		5F5DB175244DDCF600973658 /* MainPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterSpy.swift; sourceTree = "<group>"; };
+		5F5DB176244DDCF600973658 /* MainPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				5F2E9D172449E1BF007C7944 /* CleanTimeZoneTests.swift */,
+				5F5DB172244DDCDF00973658 /* Main Scene */,
 				5F2E9D192449E1BF007C7944 /* Info.plist */,
 			);
 			path = CleanTimeZoneTests;
@@ -211,6 +220,17 @@
 				5F5DB167244DCEBE00973658 /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5F5DB172244DDCDF00973658 /* Main Scene */ = {
+			isa = PBXGroup;
+			children = (
+				5F5DB173244DDCF600973658 /* MainInteractorTests.swift */,
+				5F5DB175244DDCF600973658 /* MainPresenterSpy.swift */,
+				5F5DB176244DDCF600973658 /* MainPresenterTests.swift */,
+				5F5DB174244DDCF600973658 /* MainViewControllerSpy.swift */,
+			);
+			path = "Main Scene";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,7 +389,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F5DB178244DDCF600973658 /* MainViewControllerSpy.swift in Sources */,
 				5F2E9D182449E1BF007C7944 /* CleanTimeZoneTests.swift in Sources */,
+				5F5DB17A244DDCF600973658 /* MainPresenterTests.swift in Sources */,
+				5F5DB179244DDCF600973658 /* MainPresenterSpy.swift in Sources */,
+				5F5DB177244DDCF600973658 /* MainInteractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
