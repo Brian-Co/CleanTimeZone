@@ -63,6 +63,7 @@ extension TimeZonesViewController: UITableViewDelegate, UITableViewDataSource {
         
         let timeZone = viewModel?.timeZones[indexPath.row]
         cell.textLabel?.text = timeZone?.text
+        cell.detailTextLabel?.text = timeZone?.continent
         cell.imageView?.image = UIImage(systemName: "clock")
         
         return cell
