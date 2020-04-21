@@ -9,7 +9,7 @@
 import XCTest
 @testable import CleanTimeZone
 
-class MainPresenterTests: XCTest {
+class MainPresenterTests: XCTestCase {
     var viewControllerSpy: MainViewControllerSpy!
     var presenterUnderTesting: MainPresenter!
 
@@ -29,14 +29,16 @@ class MainPresenterTests: XCTest {
         // Act
         presenterUnderTesting.modelUpdated(value)
         // Assert
-        XCTAssert(viewControllerSpy.viewModelUpdatedCalled)
+        XCTAssert(viewControllerSpy.invokedViewModelUpdated)
+        XCTAssertEqual(viewControllerSpy.invokedViewModelUpdatedParameters?.viewModel.mainText, "CleanTimeZone opened\r10 times")
     }
     
     func testModelUpdatedNilShouldCallViewModelUpdated() {
         // Act
         presenterUnderTesting.modelUpdated(nil)
         // Assert
-        XCTAssert(viewControllerSpy.viewModelUpdatedCalled)
+        XCTAssert(viewControllerSpy.invokedViewModelUpdated)
+        XCTAssertEqual(viewControllerSpy.invokedViewModelUpdatedParameters?.viewModel.mainText, "CleanTimeZone opened\rX times")
     }
     
     func testColorUpdatedWithValueShouldCallViewModelUpdated() {
@@ -45,14 +47,16 @@ class MainPresenterTests: XCTest {
         // Act
         presenterUnderTesting.colorUpdated(value)
         // Assert
-        XCTAssert(viewControllerSpy.viewModelUpdatedCalled)
+        XCTAssert(viewControllerSpy.invokedViewModelUpdated)
+        XCTAssertEqual(viewControllerSpy.invokedViewModelUpdatedParameters?.viewModel.backgroundColor, .white)
     }
     
     func testColorUpdatedNilShouldCallViewModelUpdated() {
         // Act
         presenterUnderTesting.colorUpdated(nil)
         // Assert
-        XCTAssert(viewControllerSpy.viewModelUpdatedCalled)
+        XCTAssert(viewControllerSpy.invokedViewModelUpdated)
+        XCTAssertEqual(viewControllerSpy.invokedViewModelUpdatedParameters?.viewModel.backgroundColor, nil)
     }
     
 }

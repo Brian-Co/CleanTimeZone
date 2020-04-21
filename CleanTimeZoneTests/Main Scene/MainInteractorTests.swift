@@ -9,7 +9,7 @@
 import XCTest
 @testable import CleanTimeZone
 
-class MainInteractorTests: XCTest {
+class MainInteractorTests: XCTestCase {
     var presenterSpy: MainPresenterSpy!
     var interactorUnderTesting: MainInteractor!
 
@@ -27,14 +27,14 @@ class MainInteractorTests: XCTest {
         // Act
         interactorUnderTesting.loadContent()
         // Assert
-        XCTAssert(presenterSpy.modelUpdatedCalled)
+        XCTAssert(presenterSpy.invokedModelUpdated)
     }
     
     func testChangeBackgroundColorShouldCallColorUpdated() {
         // Act
         interactorUnderTesting.changeBackgroundColor()
         // Assert
-        XCTAssert(presenterSpy.colorUpdatedCalled)
+        XCTAssert(presenterSpy.invokedColorUpdated)
     }
     
 }

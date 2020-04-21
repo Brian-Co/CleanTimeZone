@@ -10,16 +10,28 @@ import XCTest
 @testable import CleanTimeZone
 
 class MainPresenterSpy: MainPresenterInput {
-    
-    var modelUpdatedCalled = false
-    var colorUpdatedCalled = false
-    
+
+    var invokedModelUpdated = false
+    var invokedModelUpdatedCount = 0
+    var invokedModelUpdatedParameters: (timesOpen: Int?, Void)?
+    var invokedModelUpdatedParametersList = [(timesOpen: Int?, Void)]()
+
     func modelUpdated(_ timesOpen: Int?) {
-        modelUpdatedCalled = true
+        invokedModelUpdated = true
+        invokedModelUpdatedCount += 1
+        invokedModelUpdatedParameters = (timesOpen, ())
+        invokedModelUpdatedParametersList.append((timesOpen, ()))
     }
-    
+
+    var invokedColorUpdated = false
+    var invokedColorUpdatedCount = 0
+    var invokedColorUpdatedParameters: (color: MainViewModel.MainBackgroundColor?, Void)?
+    var invokedColorUpdatedParametersList = [(color: MainViewModel.MainBackgroundColor?, Void)]()
+
     func colorUpdated(_ color: MainViewModel.MainBackgroundColor?) {
-        colorUpdatedCalled = true
+        invokedColorUpdated = true
+        invokedColorUpdatedCount += 1
+        invokedColorUpdatedParameters = (color, ())
+        invokedColorUpdatedParametersList.append((color, ()))
     }
-    
 }

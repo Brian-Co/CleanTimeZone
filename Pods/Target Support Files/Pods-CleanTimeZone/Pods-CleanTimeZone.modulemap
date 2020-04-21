@@ -1,0 +1,6 @@
+framework module Pods_CleanTimeZone {
+  umbrella header "Pods-CleanTimeZone-umbrella.h"
+
+  export *
+  module * { export * }
+}

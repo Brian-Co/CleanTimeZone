@@ -10,11 +10,16 @@ import XCTest
 @testable import CleanTimeZone
 
 class MainViewControllerSpy: MainViewControllerInput {
-    
-    var viewModelUpdatedCalled = false
-    
-    func viewModelUpdated(_ viewModel: MainViewModel.Content, _ changedContent: MainViewModel.ChangedContent) {
-        viewModelUpdatedCalled = true
-    }
 
+    var invokedViewModelUpdated = false
+    var invokedViewModelUpdatedCount = 0
+    var invokedViewModelUpdatedParameters: (viewModel: MainViewModel.Content, changedContent: MainViewModel.ChangedContent)?
+    var invokedViewModelUpdatedParametersList = [(viewModel: MainViewModel.Content, changedContent: MainViewModel.ChangedContent)]()
+
+    func viewModelUpdated(_ viewModel: MainViewModel.Content, _ changedContent: MainViewModel.ChangedContent) {
+        invokedViewModelUpdated = true
+        invokedViewModelUpdatedCount += 1
+        invokedViewModelUpdatedParameters = (viewModel, changedContent)
+        invokedViewModelUpdatedParametersList.append((viewModel, changedContent))
+    }
 }
